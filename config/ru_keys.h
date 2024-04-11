@@ -1,0 +1,10 @@
+#define RU_YE SQT
+#define RU_TSE COMMA
+#define RU_Y DOT
+#define RU_K P
+#define RU_E Y
+#define RU_H F
+#define RU_G G
+#define RU_SH C
+#define RU_SH` R
+#define RU_Z L
