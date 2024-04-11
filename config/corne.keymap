@@ -9,18 +9,22 @@
 #include <dt-bindings/zmk/bt.h>
 #include "ru_keys.h"
 
+#define DVORAK_LAYER 0
+#define RUSSIAN_LAYER 1
+
 
 / {
 
 
 		macros {
-		kp_RU_YE: kp_RU_YE {
+		mv_to_rus: mv_to_rus {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
 				= <&macro_press &kp LCTRL>
 				, <&macro_tap &kp LSHFT>
 				, <&macro_release &kp LCTRL>
+				, <&macro_tap &to RUSSIAN_LAYER>
 				//, <&macro_tap &kp RU_YE>
 				//, <&macro_tap &kp LCTRL &kp LSHFT>
 				;
@@ -40,7 +44,7 @@
    &kp TAB   &kp SQT &kp COMMA &kp DOT &kp P &kp Y   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
    &kp LCTRL &kp A &kp O &kp E &kp U &kp I   &kp D &kp H  &kp T     &kp N   &kp S &kp SQT
    &kp LSHFT &kp SEMICOLON &kp Q &kp J &kp K &kp X   &kp B &kp M  &kp W &kp V &kp Z &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+                  &mv_to_rus &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
                         >;
                 };
                 lower_layer {
@@ -50,7 +54,7 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp_RU_YE       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
+   &kp TAB    &RU_YE       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
    &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
