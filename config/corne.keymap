@@ -9,8 +9,11 @@
 #include <dt-bindings/zmk/bt.h>
 #include "ru_keys.h"
 
+
 / {
-	macros {
+
+
+		macros {
 		kp_RU_YE: kp_RU_YE {
 			compatible = "zmk, behavior-macro";
 			#binding-cells = <0>;
@@ -21,10 +24,7 @@
 				;
 		}
 	}
-}
 
-
-/ {
         keymap {
                 compatible = "zmk,keymap";
 
