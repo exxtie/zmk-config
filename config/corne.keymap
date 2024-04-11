@@ -15,7 +15,7 @@
 
 		macros {
 		kp_RU_YE: kp_RU_YE {
-			compatible = "zmk, behavior-macro";
+			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
 				= <&macro_tap &kp LCTRL &kp LSHFT>
