@@ -22,8 +22,8 @@
 				, <&macro_tap &kp RU_YE>
 				, <&macro_tap &kp LCTRL &kp LSHFT>
 				;
-		}
-	}
+		};
+	};
 
         keymap {
                 compatible = "zmk,keymap";
