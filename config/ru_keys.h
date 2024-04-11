@@ -1,4 +1,4 @@
-#define RU_YE SQT
+#define RU_YE Q
 #define RU_TSE COMMA
 #define RU_Y DOT
 #define RU_K P
