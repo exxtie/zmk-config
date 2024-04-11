@@ -24,7 +24,7 @@
 				= <&macro_press &kp LCTRL>
 				, <&macro_tap &kp LSHFT>
 				, <&macro_release &kp LCTRL>
-				//, <&macro_tap &to RUSSIAN_LAYER>
+				, <&macro_tap &to RUSSIAN_LAYER>
 				//, <&macro_tap &kp RU_YE>
 				//, <&macro_tap &kp LCTRL &kp LSHFT>
 				;
