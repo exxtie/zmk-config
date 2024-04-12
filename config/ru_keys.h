@@ -18,7 +18,7 @@
 #define RU_O J
 #define RU_L K
 #define RU_D L
-#define RU_ZH ;
+#define RU_ZH SEMICOLON
 
 #define RU_YA Z
 #define RU_CH X
