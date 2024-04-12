@@ -67,9 +67,9 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp RU_YE       &kp RU_TSE       &kp RU_Y       &kp RU_K       &kp RU_E         &kp RU_N   &kp RU_G   &kp RU_SH &kp RU_SHb    &kp RU_Z &kp BSPC
-   &bt BT_CLR &kp RU_F &kp RU_bl &kp RU_V &kp RU_A &kp RU_P   &kp RU_R &kp RU_O &kp RU_L &kp RU_D &kp RU_ZH &trans
-   &kp LSHFT  &kp RU_YA       &kp RU_CH       &kp RU_C       &kp RU_M       &kp RU_I         &kp RU_T   &kp RU_b   &kp RU_B &kp RU_YU    &trans &trans
+   &kp TAB    &mt LS(RU_YE) RU_YE  &mt LS(RU_TSE) RU_TSE  &mt LS(RU_Y) RU_Y  &mt LS(RU_K) RU_K   &mt LS(RU_E) RU_E   &mt LS(RU_N) RU_N   &mt LS(RU_G) RU_G   &mt LS(RU_SH) RU_SH &mt LS(RU_SHb) RU_SHb    &mt LS(RU_Z) RU_Z &kp BSPC
+   &bt BT_CLR &mt LS(RU_F) RU_F &mt LS(RU_bl) RU_bl &mt LS(RU_V) RU_V &mt LS(RU_A) RU_A &mt LS(RU_P) RU_P   &mt LS(RU_R) RU_R &mt LS(RU_O) RU_O &mt LS(RU_L) RU_L &mt LS(RU_D) RU_D &mt LS(RU_ZH) RU_ZH &trans
+   &kp LSHFT  &mt LS(RU_YA) RU_YA       &mt LS(RU_CH) RU_CH       &mt LS(RU_C) RU_C       &mt LS(RU_M) RU_M       &mt LS(RU_I) RU_I         &mt LS(RU_T) RU_T   &mt LS(RU_B) RU_b   &mt LS(RU_B) RU_B &mt LS(RU_YU) RU_YU    &trans &trans
                                     &mv_to_dvor     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
