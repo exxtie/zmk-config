@@ -17,8 +17,7 @@
 
 
 		macros {
-		mv_to_rus: mv_to_rus
-		{
+		mv_to_rus: mv_to_rus {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
