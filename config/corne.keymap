@@ -54,9 +54,9 @@
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                          bindings = <
-   &kp TAB   &kp SQT &kp COMMA &kp DOT &mt LS(P) P &kp Y   &kp F &kp G  &kp C     &kp R   &kp L    &kp BSPC
-   &kp LCTRL &kp A &kp O &kp E &kp U &kp I   &kp D &kp H  &kp T     &kp N   &kp S &kp SQT
-   &kp LSHFT &kp SEMICOLON &kp Q &kp J &kp K &kp X   &kp B &kp M  &kp W &kp V &kp Z &kp ESC
+   &kp TAB   &kp SQT &kp COMMA &kp DOT &mt LS(P) P &mt LS(Y) Y   &mt LS(F) F &mt LS(G) G  &mt LS(C) C     &mt LS(R) R   &mt LS(L) L    &kp BSPC
+   &kp LCTRL &mt LS(A) A &mt LS(O) O &mt LS(E) E &mt LS(U) U &mt LS(I) I   &mt LS(D) D &mt LS(H) H  &mt LS(T) T     &mt LS(N) N   &mt LS(S) S &kp SQT
+   &kp LSHFT &kp SEMICOLON &mt LS(Q) Q &mt LS(J) J &mt LS(K) K &mt LS(X) X   &mt LS(B) B &mt LS(M) M  &mt LS(W) W &mt LS(V) V &mt LS(Z) Z &kp ESC
                   &mv_to_rus &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
                         >;
                 };
