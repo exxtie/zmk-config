@@ -28,8 +28,7 @@
 				;
 		};
 
-		/*mv_to_dvor: mv_to_dvor
-		{
+		mv_to_dvor: mv_to_dvor {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
@@ -38,7 +37,7 @@
 				, <&macro_release &kp LCTRL>
 				, <&macro_tap &to DVORAK_LAYER>
 				;
-		};*/
+		};
 	};
 
         keymap {
@@ -67,7 +66,7 @@
    &kp TAB    &kp RU_YE       &kp RU_TSE       &kp RU_Y       &kp RU_K       &kp RU_E         &kp RU_N   &kp RU_G   &kp RU_SH &kp RU_SHb    &kp RU_Z &kp BSPC
    &bt BT_CLR &kp RU_F &kp RU_bl &kp RU_V &kp RU_A &kp RU_P   &kp RU_R &kp RU_O &kp RU_L &kp RU_D &kp RU_ZH &trans
    &kp LSHFT  &kp RU_YA       &kp RU_CH       &kp RU_C       &kp RU_M       &kp RU_I         &kp RU_T   &kp RU_b   &kp RU_B &kp RU_YU    &trans &trans
-                                    &trans     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+                                    &mv_to_dvor     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
                         >;
                 };
 
