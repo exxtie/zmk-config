@@ -6,5 +6,5 @@
 #define RU_H Y
 #define RU_G U
 #define RU_SH I
-#define RU_SH` O
+#define RU_SHb O
 #define RU_Z P
