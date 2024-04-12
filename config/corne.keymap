@@ -24,7 +24,7 @@
 
 / {
 		macros {
-		mv_to_rus: mv_to_rus {
+		/*mv_to_rus: mv_to_rus {
 			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			bindings
@@ -44,7 +44,7 @@
 				, <&macro_release &kp LCTRL>
 				, <&macro_tap &to DVORAK_LAYER>
 				;
-		};
+		};*/
 
 		mv_to_layer: mv_to_layer {
 			compatible = "zmk,behavior-macro-one-param";
@@ -83,7 +83,7 @@
    &none  &kp SQT 		 &kp COMMA 	  &kp DOT 	   &mt LS(P) P  &mt LS(Y) Y		&mt LS(F) F  &mt LS(G) G   &mt LS(C) C  &mt LS(R) R  &mt LS(L) L  &none
    &none  &mt LS(A) A 	 &mt LS(O) O  &mt LS(E) E  &mt LS(U) U  &mt LS(I) I		&mt LS(D) D  &mt LS(H) H   &mt LS(T) T  &mt LS(N) N  &mt LS(S) S  &none
    &none  &kp SEMICOLON  &mt LS(Q) Q  &mt LS(J) J  &mt LS(K) K  &mt LS(X) X   	&mt LS(B) B  &mt LS(M) M   &mt LS(W) W  &mt LS(V) V  &mt LS(Z) Z  &none
-                  								&mv_to_layer RUSSIAN_LAYER  &lt NUM_LAYER  BACKSPACE  &kp SPACE   	&kp RET  &mo 2  &kp RALT
+                  								&macros_tap RUSSIAN_LAYER DEL  &lt NUM_LAYER  BACKSPACE  &kp SPACE   	&kp RET  &mo 2  &kp RALT
                         >;
                 };
                 russian_layer {
