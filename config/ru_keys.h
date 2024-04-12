@@ -27,5 +27,5 @@
 #define RU_I B
 #define RU_T N
 #define RU_b M
-#define RU_B ,
-#define RU_YU .
+#define RU_B COMMA
+#define RU_YU DOT
