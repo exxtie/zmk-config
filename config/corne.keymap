@@ -9,6 +9,8 @@
 #define NUM_LAYER 2
 #define FUNCT_LAYER 3
 #define F_KEYS_LAYER 4
+#define SYMBOLS_LAYER 5
+#define ARROWS_LAYER 6
 
 //#define PRT_SCR LG(LS(S))
 
@@ -61,11 +63,11 @@
 // |   |	A		a	|	O	   o |	E		e |	 U		u |	 I		 i |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // |   |		;		|	Q	   q |	J	    j |	 K		k |	 X		 x |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    							| GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                         bindings = <
+                        bindings = <
    &none  &kp SQT 		 &kp COMMA 	  &kp DOT 	   &mt LS(P) P  &mt LS(Y) Y		&mt LS(F) F  &mt LS(G) G   &mt LS(C) C  &mt LS(R) R  &mt LS(L) L  &none
    &none  &mt LS(A) A 	 &mt LS(O) O  &mt LS(E) E  &mt LS(U) U  &mt LS(I) I		&mt LS(D) D  &mt LS(H) H   &mt LS(T) T  &mt LS(N) N  &mt LS(S) S  &none
    &none  &kp SEMICOLON  &mt LS(Q) Q  &mt LS(J) J  &mt LS(K) K  &mt LS(X) X   	&mt LS(B) B  &mt LS(M) M   &mt LS(W) W  &mt LS(V) V  &mt LS(Z) Z  &none
-         &macros_tap RUSSIAN_LAYER DEL  &lt NUM_LAYER  BACKSPACE  &lt FUNCT_LAYER SPACE   	&kp SPACE  &kp ENTER  &lt F_KEYS_LAYER TAB
+         &macros_tap RUSSIAN_LAYER DEL  &lt NUM_LAYER  BACKSPACE  &lt FUNCT_LAYER SPACE   	&lt SYMBOLS_LAYER SPACE  &lt ARROWS_LAYER ENTER  &lt F_KEYS_LAYER TAB
                         >;
                 };
                 russian_layer {
@@ -103,7 +105,7 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &none &none &none &none &none &none   	&kp LC(Y) &kp HOME  &kp END &kp CAPS &none &none
+   &none &none &none &none &none &none   	&kp LC(Y) &kp HOME  &kp END &kp CAPS &kp ESC &none
    &none &none &none &none &none &none      &kp LC(Z) &kp LC(C) &kp LC(V)  &kp LC(X) &none &none
    &none &none &none &none &none &none      &caps_word &kp PAGE_UP  &kp PAGE_DOWN  &kp INSERT &none &none
                         &none &none   &none   &none   &none    &none
@@ -111,6 +113,34 @@
                 };
 
 				f_keys_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &none &kp F4 &kp F3 &kp F2 &kp F1 &kp LG(LS(S))   	&none &none  &none &none &none &none
+   &none &kp F8 &kp F7 &kp F6 &kp F5 &kp LA(TAB)      &none &none &none  &none &none &none
+   &none &kp F12 &kp F11 &kp F10 &kp F9 &none      &none &none  &none  &none &none &none
+                        &none &none   &none   &none   &none    &none
+                        >;
+                };
+
+				symbols_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &none &kp EXCL &kp LPAR &kp RPAR &mt LBKT LBRC &mt RBKT RBRC   	&none &none  &none &none &none &none
+   &none &kp QMARK &kp BACKSLASH &kp PIPE &kp UNDERSCORE &kp COLON      &none &none &none  &none &none &none
+   &none &kp TILDE &kp HASH &kp AT_SIGN &kp PERCENT &kp AMPERSAND      &none &none  &none  &none &none &none
+                        &none &kp COMMA   &kp DQT   &none   &none    &none
+                        >;
+                };
+
+				arrows_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
