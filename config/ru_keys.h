@@ -29,3 +29,7 @@
 #define RU_b M
 #define RU_B COMMA
 #define RU_YU DOT
+
+#define RU_AE SQT
+#define RU_H LBKT
+#define RU_TVZN RBKT
