@@ -57,14 +57,14 @@
 				compatible = "zmk,behavior-tap-dance";
 				#binding-cells = <0>;
 				tapping-term-ms = <200>;
-				bindings = <&mt LS(RU_ZH) RU_ZH>, <&mt LS(RU_H) RU_H>
+				bindings = <&mt LS(RU_ZH) RU_ZH>, <&mt LS(RU_H) RU_H>;
 			};
 
 			td_mt_ru_z_tvz: td_mt_ru_z_tvz {
 				compatible = "zmk,behavior-tap-dance";
 				#binding-cells = <0>;
 				tapping-term-ms = <200>;
-				bindings = <&mt LS(RU_Z) RU_Z>, <&mt LS(RU_TVZN) RU_TVZN>
+				bindings = <&mt LS(RU_Z) RU_Z>, <&mt LS(RU_TVZN) RU_TVZN>;
 			};
 		};
 
