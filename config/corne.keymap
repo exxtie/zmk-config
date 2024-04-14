@@ -10,7 +10,7 @@
 #define FUNCT_LAYER 3
 #define F_KEYS_LAYER 4
 
-#define PRT_SCR LG(LS(S))
+//#define PRT_SCR LG(LS(S))
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -117,9 +117,9 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &none &kp F4 &kp F3 &kp F2 &kp F1 &kp LG(LS(S))   	&kp LC(Y) &kp HOME  &kp END &kp CAPS &none &none
-   &none &kp F8 &kp F7 &kp F6 &kp F5 &kp LALT(TAB)      &kp LC(Z) &kp LC(C) &kp LC(V)  &kp LC(X) &none &none
-   &none &kp F12 &kp F11 &kp F10 &kp F9 &none      &caps_word &kp PAGE_UP  &kp PAGE_DOWN  &kp INSERT &none &none
+   &none &kp F4 &kp F3 &kp F2 &kp F1 &none   	&none &none  &none &none &none &none
+   &none &kp F8 &kp F7 &kp F6 &kp F5 &none      &none &none &none  &none &none &none
+   &none &kp F12 &kp F11 &kp F10 &kp F9 &none      &none &none  &none  &none &none &none
                         &none &none   &none   &none   &none    &none
                         >;
                 };
