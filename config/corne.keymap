@@ -11,6 +11,7 @@
 #define F_KEYS_LAYER 4
 #define SYMBOLS_LAYER 5
 #define ARROWS_LAYER 6
+#define BT_LAYER 7
 
 //#define PRT_SCR LG(LS(S))
 
@@ -29,45 +30,58 @@
 	tapping-term-ms = <300>;
 };
 
+&sl {
+        release-after-ms = <2000>;
+};
+
 / {
-		macros {
-		mv_to_layer: mv_to_layer {
-			compatible = "zmk,behavior-macro-one-param";
-			#binding-cells = <1>;
-			bindings
-				= <&macro_press &kp LCTRL>
-				, <&macro_tap &kp LSHFT>
-				, <&macro_release &kp LCTRL>
-				, <&macro_param_1to1>
-				, <&macro_tap &to MACRO_PLACEHOLDER>
-				;
-		};
-	};
+        macros {
+        mv_to_layer: mv_to_layer {
+                compatible = "zmk,behavior-macro-one-param";
+                #binding-cells = <1>;
+                bindings
+                        = <&macro_press &kp LCTRL>
+                        , <&macro_tap &kp LSHFT>
+                        , <&macro_release &kp LCTRL>
+                        , <&macro_param_1to1>
+                        , <&macro_tap &to MACRO_PLACEHOLDER>
+                        ;
+        };
+};
 
-		behaviors {
-			macros_tap: macros_tap {
-				compatible = "zmk,behavior-hold-tap";
-				#binding-cells = <2>;
-				flavor = "tap-preferred";
-				tapping-term-ms = <400>;
-				quick-tap-ms = <200>;
-				bindings = <&mv_to_layer>, <&kp>;
-			};
+        behaviors {
+                macros_tap: macros_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        flavor = "tap-preferred";
+                        tapping-term-ms = <400>;
+                        quick-tap-ms = <200>;
+                        bindings = <&mv_to_layer>, <&kp>;
+                };
 
-			td_mt_ru_zh_h: td_mt_ru_zh_h {
-				compatible = "zmk,behavior-tap-dance";
-				#binding-cells = <0>;
-				tapping-term-ms = <200>;
-				bindings = <&mt LS(RU_ZH) RU_ZH>, <&mt LS(RU_H) RU_H>;
-			};
+                td_mt_ru_zh_h: td_mt_ru_zh_h {
+                        compatible = "zmk,behavior-tap-dance";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&mt LS(RU_ZH) RU_ZH>, <&mt LS(RU_H) RU_H>;
+                };
 
-			td_mt_ru_z_tvz: td_mt_ru_z_tvz {
-				compatible = "zmk,behavior-tap-dance";
-				#binding-cells = <0>;
-				tapping-term-ms = <200>;
-				bindings = <&mt LS(RU_Z) RU_Z>, <&mt LS(RU_TVZN) RU_TVZN>;
-			};
-		};
+                td_mt_ru_z_tvz: td_mt_ru_z_tvz {
+                        compatible = "zmk,behavior-tap-dance";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&mt LS(RU_Z) RU_Z>, <&mt LS(RU_TVZN) RU_TVZN>;
+                };
+        };
+
+        combos {
+                compatible = "zmk,combos";
+                combo_bt_layer {
+                        timeout-ms = <50>;
+                        key-positions = <37 40>;
+                        bindings = <&sl BT_LAYER>;
+                };
+        };
 
         keymap {
                 compatible = "zmk,keymap";
@@ -99,7 +113,7 @@
                         >;
                 };
 
-				num_layer {
+		num_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -113,7 +127,7 @@
                         >;
                 };
 
-				functional_layer {
+		functional_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -127,7 +141,7 @@
                         >;
                 };
 
-				f_keys_layer {
+		f_keys_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -141,7 +155,7 @@
                         >;
                 };
 
-				symbols_layer {
+		symbols_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -155,7 +169,7 @@
                         >;
                 };
 
-				arrows_layer {
+		arrows_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -164,6 +178,20 @@
                         bindings = <
    &none &none &none &kp UP_ARROW &none &none   	&none &none  &none &none &none &none
    &none &none &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW &none      &none &none &none  &none &none &none
+   &none &none &none &none &none &none      &none &none  &none  &none &none &none
+                        &none &none   &none   &none   &none    &none
+                        >;
+                };
+
+                bluetooth_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &none &none &bt BT_CLR &bt BT_DISC &none &none   	&none &none  &none &none &none &none
+   &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &none &none &none  &none &none &none
    &none &none &none &none &none &none      &none &none  &none  &none &none &none
                         &none &none   &none   &none   &none    &none
                         >;
