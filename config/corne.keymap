@@ -91,7 +91,7 @@
 // |   |		'		|		, 	 |		.	  |	 P		p |	 Y		 y |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // |   |	A		a	|	O	   o |	E		e |	 U		u |	 I		 i |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // |   |		;		|	Q	   q |	J	    j |	 K		k |	 X		 x |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    							| GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//p                    							| GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &none  &kp SQT 		 &kp COMMA 	  &kp DOT 	   &mt LS(P) P  &mt LS(Y) Y		&mt LS(F) F  &mt LS(G) G   &mt LS(C) C  &mt LS(R) R  &mt LS(L) L  &none
    &none  &mt LS(A) A 	 &mt LS(O) O  &mt LS(E) E  &mt LS(U) U  &mt LS(I) I		&mt LS(D) D  &mt LS(H) H   &mt LS(T) T  &mt LS(N) N  &mt LS(S) S  &none
