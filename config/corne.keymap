@@ -9,9 +9,10 @@
 #define NUM_LAYER 2
 #define FUNCT_LAYER 3
 #define F_KEYS_LAYER 4
-#define SYMBOLS_LAYER 5
-#define ARROWS_LAYER 6
-#define BT_LAYER 7
+#define SYMBOLS_1_LAYER 5
+#define SYMBOLS_2_LAYER 6
+#define ARROWS_LAYER 7
+#define BT_LAYER 8
 
 //#define PRT_SCR LG(LS(S))
 
@@ -22,7 +23,7 @@
 
 
 &mt {
-	tapping-term-ms = <300>;
+	tapping-term-ms = <200>;
 	flavor = "tap-preferred";
 	};
 
@@ -45,6 +46,30 @@
                         , <&macro_release &kp LCTRL>
                         , <&macro_param_1to1>
                         , <&macro_tap &to MACRO_PLACEHOLDER>
+                        ;
+        };
+
+        highlight_word: highlight_word {
+                compatible = "zmk,behavior-macro-one-param";
+                #binding-cells = <0>;
+                bindings
+                        = <&macro_press &kp LCTRL>
+                        , <&macro_tap &kp LEFT_ARROW>
+                        , <&macro_press &kp LSHFT>
+                        , <&macro_tap &kp RIGHT_ARROW>
+                        , <&macro_release &kp LSHFT>
+                        , <&macro_release &kp LCTRL>
+                        ;
+        };
+
+        highlight_row: highlight_row {
+                compatible = "zmk,behavior-macro-one-param";
+                #binding-cells = <0>;
+                bindings
+                        = <&macro_tap &kp HOME>
+                        , <&macro_press &kp LSHFT>
+                        , <&macro_tap &kp END>
+                        , <&macro_release &kp LSHFT>
                         ;
         };
 };
@@ -79,6 +104,27 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp COMMA>, <&kp SEMICOLON>;
                 };
+
+                td_sym_layers: td_sym_layers {
+                        compatible = "zmk,behavior-tap-dance";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&lt SYMBOLS_1_LAYER TAB>, <&lt SYMBOLS_2_LAYER TAB>;
+                };
+
+                td_home_hword: td_home_hword {
+                        compatible = "zmk,behavior-tap-dance";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp HOME>, <&highlight_word>;
+                };
+
+                td_end_hrow: td_home_hword {
+                        compatible = "zmk,behavior-tap-dance";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp END>, <&highlight_row>;
+                };
         };
 
         combos {
@@ -103,7 +149,7 @@
    &none  &kp SQT 		 &kp COMMA 	  &kp DOT 	   &mt LS(P) P  &mt LS(Y) Y		&mt LS(F) F  &mt LS(G) G   &mt LS(C) C  &mt LS(R) R  &mt LS(L) L  &none
    &none  &mt LS(A) A 	 &mt LS(O) O  &mt LS(E) E  &mt LS(U) U  &mt LS(I) I		&mt LS(D) D  &mt LS(H) H   &mt LS(T) T  &mt LS(N) N  &mt LS(S) S  &none
    &none  &kp SEMICOLON  &mt LS(Q) Q  &mt LS(J) J  &mt LS(K) K  &mt LS(X) X   	&mt LS(B) B  &mt LS(M) M   &mt LS(W) W  &mt LS(V) V  &mt LS(Z) Z  &none
-         &macros_tap RUSSIAN_LAYER BACKSPACE  &lt NUM_LAYER  SPACE  &lt FUNCT_LAYER DEL   	&lt SYMBOLS_LAYER TAB  &lt ARROWS_LAYER SPACE  &lt F_KEYS_LAYER ENTER
+         &macros_tap RUSSIAN_LAYER BACKSPACE  &lt NUM_LAYER  SPACE  &lt FUNCT_LAYER DEL   	&td_sym_layers  &lt ARROWS_LAYER SPACE  &lt F_KEYS_LAYER ENTER
                         >;
                 };
                 russian_layer {
@@ -141,7 +187,7 @@
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &none &none &none &none &none &none   	&kp LC(Y) &kp HOME  &kp END &kp CAPS &kp ESC &none
+   &none &none &none &none &none &none   	&kp LC(Y) &td_home_hword  &td_end_hrow &kp CAPS &kp ESC &none
    &none &none &none &none &none &none      &kp LC(Z) &kp LC(C) &kp LC(V)  &kp LC(X) &none &none
    &none &none &none &none &none &none      &caps_word &kp PAGE_UP  &kp PAGE_DOWN  &kp INSERT &none &none
                         &none &none   &none   &none   &none    &none
@@ -162,17 +208,31 @@
                         >;
                 };
 
-		symbols_layer {
+		symbols_1_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
 // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &none &kp EXCL &kp LPAR &kp RPAR &mt LBKT LBRC &mt RBKT RBRC   	&none &none  &none &none &none &none
-   &none &kp QMARK &kp BACKSLASH &kp PIPE &kp UNDERSCORE &kp COLON      &none &none &none  &none &none &none
-   &none &kp TILDE &kp HASH &kp AT_SIGN &kp PERCENT &kp AMPERSAND      &none &none  &none  &none &none &none
-                        &td_comma_semicolon   &kp DOT   &kp DQT   &none    &none &none
+   &none &kp EXCL &kp LPAR &kp RPAR &kp LBKT &kp RBKT   	&none &none  &none &none &none &none
+   &none &kp AT_SIGN &kp BACKSLASH &kp UNDERSCORE &kp SQT &kp PERCENT      &none &none &none  &none &none &none
+   &none &kp SEMICOLON &kp HASH &kp DOT &none &none     &none &none  &none  &none &none &none
+                        &none   &none  &none  &none    &none &none
+                        >;
+                };
+
+                symbols_2_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &none &kp QMARK &none &none &kp LBRC &kp RBRC   	&none &none  &none &none &none &none
+   &none &kp TILDE &kp PIPE &none &kp DQT &kp AMPERSAND      &none &none &none  &none &none &none
+   &none &kp COLON &none &kp COMMA &none &none      &none &none  &none  &none &none &none
+                        &none   &none   &none   &none    &none &none
                         >;
                 };
 
