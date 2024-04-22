@@ -119,7 +119,7 @@
                         bindings = <&kp HOME>, <&highlight_word>;
                 };
 
-                td_end_hrow: td_home_hword {
+                td_end_hrow: td_end_hrow {
                         compatible = "zmk,behavior-tap-dance";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
