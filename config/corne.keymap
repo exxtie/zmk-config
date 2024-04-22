@@ -114,14 +114,14 @@
 
                 td_home_hword: td_home_hword {
                         compatible = "zmk,behavior-tap-dance";
-                        #binding-cells = <0>;
+                        #binding-cells = <1>;
                         tapping-term-ms = <200>;
                         bindings = <&kp HOME>, <&highlight_word>;
                 };
 
                 td_end_hrow: td_end_hrow {
                         compatible = "zmk,behavior-tap-dance";
-                        #binding-cells = <0>;
+                        #binding-cells = <1>;
                         tapping-term-ms = <200>;
                         bindings = <&kp END>, <&highlight_row>;
                 };
