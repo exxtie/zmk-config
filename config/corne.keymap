@@ -168,7 +168,7 @@
                         bindings = <&lt SYMBOLS_1_LAYER TAB>, <&lt SYMBOLS_2_LAYER TAB>;
                 };
 
-                td_sym_layers_from_rus: td_sym_layers {
+                td_sym_layers_from_rus: td_sym_layers_from_rus {
                         compatible = "zmk,behavior-tap-dance";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
