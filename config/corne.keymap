@@ -51,7 +51,7 @@
 
         mv_to_dvorak: mv_to_dvorak {
                 compatible = "zmk,behavior-macro";
-                #binding-cells = <1>;
+                #binding-cells = <0>;
                 bindings
                         = <&macro_press &kp LCTRL>
                         , <&macro_tap &kp N0>
@@ -61,7 +61,7 @@
 
         mv_to_russian: mv_to_russian {
                 compatible = "zmk,behavior-macro";
-                #binding-cells = <1>;
+                #binding-cells = <0>;
                 bindings
                         = <&macro_press &kp LCTRL>
                         , <&macro_tap &kp N1>
