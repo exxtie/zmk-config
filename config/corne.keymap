@@ -50,7 +50,7 @@
         };
 
         highlight_word: highlight_word {
-                compatible = "zmk,behavior-macro-one-param";
+                compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
                         = <&macro_press &kp LCTRL>
@@ -63,7 +63,7 @@
         };
 
         highlight_row: highlight_row {
-                compatible = "zmk,behavior-macro-one-param";
+                compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings
                         = <&macro_tap &kp HOME>
