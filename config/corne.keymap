@@ -213,14 +213,14 @@
 
                 combo_sym2_layer {
                         timeout-ms = <50>;
-                        layers = <DVORAK_LAYER>
+                        layers = <DVORAK_LAYER>;
                         key-positions = <19 39>;
                         bindings = <&mo SYMBOLS_2_LAYER>;
                 };
 
                 combo_sym2_layer_from_rus {
                         timeout-ms = <50>;
-                        layers = <RUSSIAN_LAYER>
+                        layers = <RUSSIAN_LAYER>;
                         key-positions = <19 39>;
                         bindings = <&mv_from_russian SYMBOLS_2_LAYER>;
                 };
