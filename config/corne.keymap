@@ -115,6 +115,16 @@
 };
 
         behaviors {
+
+                lht: lht {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        flavor = "hold-preferred";
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <100>;
+                        bindings = <&mo>, <&kp>;
+                };
+
                 macros_from_rus_lt: macros_from_rus_lt {
                         compatible = "zmk,behavior-hold-tap";
                         #binding-cells = <2>;
@@ -156,7 +166,7 @@
                         bindings = <&mt LS(RU_Z) RU_Z>, <&mt LS(RU_TVZN) RU_TVZN>;
                 };
 
-                td_comma_semicolon: td_double_kp {
+                td_comma_semicolon: td_comma_semicolon {
                         compatible = "zmk,behavior-tap-dance";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
@@ -167,7 +177,7 @@
                         compatible = "zmk,behavior-tap-dance";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&lt SYMBOLS_1_LAYER TAB>, <&lt SYMBOLS_2_LAYER TAB>;
+                        bindings = <&lht SYMBOLS_1_LAYER TAB>, <&lht SYMBOLS_2_LAYER TAB>;
                 };
 
                 td_sym_layers_from_rus: td_sym_layers_from_rus {
