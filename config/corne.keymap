@@ -213,8 +213,16 @@
 
                 combo_sym2_layer {
                         timeout-ms = <50>;
+                        layers = <DVORAK_LAYER>
                         key-positions = <19 39>;
                         bindings = <&mo SYMBOLS_2_LAYER>;
+                };
+
+                combo_sym2_layer_from_rus {
+                        timeout-ms = <50>;
+                        layers = <RUSSIAN_LAYER>
+                        key-positions = <19 39>;
+                        bindings = <&mv_from_russian SYMBOLS_2_LAYER>;
                 };
         };
 
@@ -244,7 +252,7 @@
    &none    &mt LS(RU_YE) RU_YE  &mt LS(RU_TSE) RU_TSE  &mt LS(RU_Y) RU_Y  &mt LS(RU_K) RU_K   &mt LS(RU_E) RU_E   &mt LS(RU_N) RU_N   &mt LS(RU_G) RU_G   &mt LS(RU_SH) RU_SH &mt LS(RU_SHb) RU_SHb    &td_mt_ru_z_tvz &none
    &none &mt LS(RU_F) RU_F &mt LS(RU_bl) RU_bl &mt LS(RU_V) RU_V &mt LS(RU_A) RU_A &mt LS(RU_P) RU_P   &mt LS(RU_R) RU_R &mt LS(RU_O) RU_O &mt LS(RU_L) RU_L &mt LS(RU_D) RU_D &td_mt_ru_zh_h &none
    &none  &mt LS(RU_YA) RU_YA       &mt LS(RU_CH) RU_CH       &mt LS(RU_C) RU_C       &mt LS(RU_M) RU_M       &mt LS(RU_I) RU_I         &mt LS(RU_T) RU_T   &mt LS(RU_B) RU_b   &mt LS(RU_B) RU_B &mt LS(RU_YU) RU_YU    &mt LS(RU_AE) RU_AE &none
-                &macros_to_dvorak_tap DVORAK_LAYER BACKSPACE     &macros_from_rus_lt NUM_LAYER  SPACE      &macros_from_rus_lt FUNCT_LAYER DEL      &td_sym_layers_from_rus  &macros_from_rus_lt ARROWS_LAYER SPACE   &macros_from_rus_lt F_KEYS_LAYER ENTER
+                &macros_to_dvorak_tap DVORAK_LAYER BACKSPACE     &macros_from_rus_lt NUM_LAYER  SPACE      &macros_from_rus_lt FUNCT_LAYER DEL      &macros_from_rus_lt SYMBOLS_1_LAYER TAB  &macros_from_rus_lt ARROWS_LAYER SPACE   &macros_from_rus_lt F_KEYS_LAYER ENTER
                         >;
                 };
 
