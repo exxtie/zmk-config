@@ -231,7 +231,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        display-name = "DVORAK"
+                        display-name = "DVORAK";
 // -----------------------------------------------------------------------------------------
 // |   |		'		|		, 	 |		.	  |	 P		p |	 Y		 y |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // |   |	A		a	|	O	   o |	E		e |	 U		u |	 I		 i |   |  H  |  J   |  K  |  L  |  ;  |  '   |
